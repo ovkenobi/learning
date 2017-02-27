@@ -2,11 +2,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <string.h>
 
 /*
 	Пример работы с каналами (pipes)
-	Пример запуска ./solution someprog arg
-	программа запускает переданную в аргементе программу с аргументов arg
+	Пример запуска ./solution test.sh 5
+	программа запускает переданную в аргементе программу с аргументом arg
 	и читает ее вывод, подсчитывает кол-во символов '0'
 */
 
@@ -20,7 +21,7 @@ int main(int count, char **v)
 	
 	sprintf(s, "./%s %s", v[1], v[2]);
 
-//	printf("%s\n",s);
+	printf("%s\n%s\n",s,v[2]);
 
 	FILE *exe = popen(s, "r");
 
